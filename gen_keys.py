@@ -24,12 +24,12 @@ def get_keys(challenge,keyId = 0, filename = "eth_mnemonic.txt"):
 
     signed_message = acct.sign_message(msg)
 
-
+    
 
     assert eth_account.Account.recover_message(msg,signature=sig.signature.hex()) == eth_addr, f"Failed to sign message properly"
 
     #return sig, acct #acct contains the private key
-    return signed_message.signature.hex(), eth_addr
+    return sig, eth_addr
 
 if __name__ == "__main__":
     for i in range(4):
