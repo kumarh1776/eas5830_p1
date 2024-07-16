@@ -22,7 +22,7 @@ def get_keys(challenge,keyId = 0, filename = "eth_mnemonic.txt"):
     acct = w3.eth.account.from_key(private_key)
     eth_addr = acct.address
 
-    signed_message = acct.sign_message(msg)
+    sig = acct.sign_message(msg)
 
     
 
